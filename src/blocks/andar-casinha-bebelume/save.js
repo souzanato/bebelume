@@ -3,7 +3,7 @@ export default function Save({ attributes }) {
   const { backgroundImage, backgroundColor, link, invertLayout, hasImage, showClouds, showGarden } = attributes;
   const blockProps = useBlockProps.save({ className: 'bebelume-nivel w-100' });
   const content = (<div className="andar-content"><InnerBlocks.Content /></div>);
-  const andarClasses = `bebelume-andar andar-casinha ${invertLayout ? 'invertido' : ''} ${hasImage ? 'has-image' : ''}`.trim();
+  const andarClasses = `bebelume-andar andar-casinha-bebelume ${invertLayout ? 'invertido' : ''} ${hasImage ? 'has-image' : ''}`.trim();
   const hasCustomBackground = backgroundImage && backgroundImage !== '';
   const inlineStyle = hasCustomBackground ? { backgroundImage: `url(${backgroundImage})`, backgroundColor } : null;
   return (

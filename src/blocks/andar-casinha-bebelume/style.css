@@ -1,6 +1,6 @@
 /* Estilos gerais + nuvens */
-.bebelume-andar.andar-casinha.invertido { transform: scaleX(-1); }
-.bebelume-andar.andar-casinha.invertido .andar-content { transform: scaleX(-1); }
+.bebelume-andar.andar-casinha-bebelume.invertido { transform: scaleX(-1); }
+.bebelume-andar.andar-casinha-bebelume.invertido .andar-content { transform: scaleX(-1); }
 
 .clouds-container {
   position: absolute;
@@ -42,11 +42,11 @@
   z-index: 0;
 }
 
-.bebelume-andar.andar-casinha {
+.bebelume-andar.andar-casinha-bebelume {
   position: relative;
 }
 
-.bebelume-andar.andar-casinha .andar-content {
+.bebelume-andar.andar-casinha-bebelume .andar-content {
   position: relative;
   z-index: 10;
 }
