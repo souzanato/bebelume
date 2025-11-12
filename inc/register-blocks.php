@@ -16,9 +16,11 @@ if (!defined('ABSPATH')) {
 function bebelume_register_blocks() {
     // Registra cada bloco
     $blocks = array(
-        'telhado',
-       'andar-bebelume',
-       'terreo-bebelume'
+       'telhado-casinha-bebelume',
+       'telhado-castelinho-bebelume',
+       'andar-castelinho-bebelume',
+       'andar-casinha-bebelume',
+       'terreo-casinha-bebelume'
     );
 
     foreach ($blocks as $block) {

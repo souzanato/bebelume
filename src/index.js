@@ -2,6 +2,8 @@
  * Registra todos os blocos do Bebelume
  */
 
-import './blocks/telhado';
-import './blocks/terreo-bebelume';
-import './blocks/andar-bebelume';
+import './blocks/andar-casinha-bebelume';
+import './blocks/andar-castelinho-bebelume';
+import './blocks/telhado-casinha-bebelume';
+import './blocks/telhado-castelinho-bebelume';
+import './blocks/terreo-casinha-bebelume';
