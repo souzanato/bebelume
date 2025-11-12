@@ -20,7 +20,8 @@ function bebelume_register_blocks() {
        'telhado-castelinho-bebelume',
        'andar-castelinho-bebelume',
        'andar-casinha-bebelume',
-       'terreo-casinha-bebelume'
+       'terreo-casinha-bebelume',
+       'terreo-castelinho-bebelume',
     );
 
     foreach ($blocks as $block) {
