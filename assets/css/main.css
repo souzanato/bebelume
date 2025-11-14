@@ -175,7 +175,7 @@ body {
 /* Andar Castelinho */
 .bebelume-andar.andar-castelinho-bebelume {
     background-image: url('../images/andar-castelinho.jpg');
-    height: 20em;
+    height: 14em;
 }
 
 .bebelume-andar.andar-castelinho-bebelume::before {
