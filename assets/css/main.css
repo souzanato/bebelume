@@ -185,6 +185,7 @@ body {
 /* Térreo Castelinho */
 .bebelume-andar.terreo-castelinho-bebelume {
     background-image: url('../images/terreo-castelinho.jpg');
+        height: 14em;
 }
 
 .bebelume-andar.terreo-castelinho-bebelume::before {
