@@ -77,6 +77,23 @@ body {
     overflow: hidden;
 }
 
+.bebelume-nivel.rosa .bebelume-andar.andar-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-rosa.png');
+}
+
+.bebelume-nivel.azul .bebelume-andar.andar-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-azul.png');
+}
+
+.bebelume-nivel.roxo .bebelume-andar.andar-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-roxo.png');
+}
+
+.bebelume-nivel.amarelo .bebelume-andar.andar-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-amarelo.png');
+}
+
+
 
 /* ============================================
    ESTRUTURA DA CASA - ANDARES
@@ -140,7 +157,7 @@ body {
 
 /* Andar Bebelume */
 .bebelume-andar.andar-casinha-bebelume {
-    background-image: url('../images/andar-bebelume.png');
+    /* background-image: url('../images/andar-bebelume.png'); */
 }
 
 .bebelume-andar.andar-casinha-bebelume::before {
