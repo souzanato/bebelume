@@ -77,6 +77,10 @@ body {
     overflow: hidden;
 }
 
+.bebelume-nivel.branco .bebelume-andar.andar-casinha-bebelume {
+        background-image: url('../images/andar-bebelume.png');
+}
+
 .bebelume-nivel.rosa .bebelume-andar.andar-casinha-bebelume {
         background-image: url('../images/andar-bebelume-rosa.png');
 }
@@ -92,8 +96,6 @@ body {
 .bebelume-nivel.amarelo .bebelume-andar.andar-casinha-bebelume {
         background-image: url('../images/andar-bebelume-amarelo.png');
 }
-
-
 
 /* ============================================
    ESTRUTURA DA CASA - ANDARES
@@ -173,6 +175,29 @@ body {
     padding-top: 40%;
 }
 
+.bebelume-nivel.branco .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume.png');
+}
+
+.bebelume-nivel.rosa .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-rosa.png');
+}
+
+.bebelume-nivel.roxo .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-roxo.png');
+}
+
+.bebelume-nivel.amarelo .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-amarelo.png');
+}
+
+.bebelume-nivel.azul .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-azul.png');
+}
+
+.bebelume-nivel.azul .bebelume-andar.terreo-casinha-bebelume {
+        background-image: url('../images/andar-bebelume-azul.png');
+}
 
 /* ============================================
    ANDARES ESPECÍFICOS - CASTELINHO
