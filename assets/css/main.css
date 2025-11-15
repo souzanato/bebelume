@@ -176,27 +176,23 @@ body {
 }
 
 .bebelume-nivel.branco .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume.png');
+        background-image: url('../images/terreo-bebelume.png');
 }
 
 .bebelume-nivel.rosa .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume-rosa.png');
+        background-image: url('../images/terreo-bebelume-rosa.png');
 }
 
 .bebelume-nivel.roxo .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume-roxo.png');
+        background-image: url('../images/terreo-bebelume-roxo.png');
 }
 
 .bebelume-nivel.amarelo .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume-amarelo.png');
+        background-image: url('../images/terreo-bebelume-amarelo.png');
 }
 
 .bebelume-nivel.azul .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume-azul.png');
-}
-
-.bebelume-nivel.azul .bebelume-andar.terreo-casinha-bebelume {
-        background-image: url('../images/andar-bebelume-azul.png');
+        background-image: url('../images/terreo-bebelume-azul.png');
 }
 
 /* ============================================
