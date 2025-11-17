@@ -1,0 +1,132 @@
+/**
+ * Estilos do bloco Sobre Nós - Front-end
+ */
+
+.bebelume-sobre-nos-block {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.bebelume-sobre-nos-block .sobre-nos-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* Row com background na versão desktop */
+.bebelume-sobre-nos-block .content-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+	min-height: 1240px;
+	padding: 80px 60px;
+	position: relative;
+	
+	/* Background image apenas no desktop - Caminho correto para assets/images */
+	background-image: url('../../../assets/images/sobre-nos.png');
+	background-size: 100% auto; /* Largura 100%, altura proporcional */
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Coluna do Título (col-6) */
+.bebelume-sobre-nos-block .title-section {
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	padding: 22em 2em;
+}
+
+.bebelume-sobre-nos-block .sobre-nos-title {
+	font-size: 4rem;
+	font-weight: 300;
+	line-height: 1.1;
+	color: #6B9B9E;
+	margin: 0;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+/* Coluna do Conteúdo (col-6) */
+.bebelume-sobre-nos-block .text-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	padding: 22em 2em;
+	color: #6B9B9E;
+}
+
+.bebelume-sobre-nos-block .text-section p {
+	font-size: 1rem;
+	line-height: 1.8;
+	margin-bottom: 1.5rem;
+	text-align: justify;
+}
+
+/* Button */
+.bebelume-sobre-nos-block .button-wrapper {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.bebelume-sobre-nos-block .sobre-nos-button {
+	display: inline-block;
+	padding: 12px 40px;
+	background: transparent;
+	color: #6B9B9E;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+	letter-spacing: 0.1em;
+	border: 2px solid #6B9B9E;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+}
+
+.bebelume-sobre-nos-block .sobre-nos-button:hover {
+	background: #6B9B9E;
+	color: #ffffff;
+}
+
+.sobre-nos-content p {
+	margin-bottom: 0 !important;
+}
+
+/* Mobile - Remove background e empilha colunas */
+@media (max-width: 768px) {
+	.bebelume-sobre-nos-block .content-wrapper {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 40px 20px;
+		min-height: auto;
+		background-image: none; /* Remove background no mobile */
+	}
+
+	.bebelume-sobre-nos-block .sobre-nos-title {
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	.bebelume-sobre-nos-block .title-section,
+	.bebelume-sobre-nos-block .text-section {
+		padding: 10px;
+	}
+
+	.bebelume-sobre-nos-block .text-section p {
+		font-size: 0.95rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.bebelume-sobre-nos-block .sobre-nos-title {
+		font-size: 2rem;
+	}
+
+	.bebelume-sobre-nos-block .text-section p {
+		font-size: 0.9rem;
+	}
+}

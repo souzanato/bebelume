@@ -14,8 +14,9 @@ if (!defined('ABSPATH')) {
  * Registra os blocos
  */
 function bebelume_register_blocks() {
-    // Registra cada bloco
+    // Lista de todos os blocos
     $blocks = array(
+       'sobre-nos',
        'telhado-casinha-bebelume',
        'telhado-castelinho-bebelume',
        'andar-castelinho-bebelume',
