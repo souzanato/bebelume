@@ -67,23 +67,13 @@ function bebelume_register_footer_widgets() {
 add_action( 'widgets_init', 'bebelume_register_footer_widgets' );
 
 /**
- * Remove widgets padrão do WordPress
+ * Desabilita o editor de blocos em widgets (volta para o clássico)
+ * Fix para erro: "Cannot read properties of null (reading 'endpoints')"
  */
-function bebelume_unregister_default_widgets() {
-    unregister_widget('WP_Widget_Pages');
-    unregister_widget('WP_Widget_Calendar');
-    unregister_widget('WP_Widget_Archives');
-    unregister_widget('WP_Widget_Links');
-    unregister_widget('WP_Widget_Meta');
-    unregister_widget('WP_Widget_Search');
-    unregister_widget('WP_Widget_Text');
-    unregister_widget('WP_Widget_Categories');
-    unregister_widget('WP_Widget_Recent_Posts');
-    unregister_widget('WP_Widget_Recent_Comments');
-    unregister_widget('WP_Widget_RSS');
-    unregister_widget('WP_Widget_Tag_Cloud');
+function bebelume_disable_block_widgets() {
+    remove_theme_support( 'widgets-block-editor' );
 }
-add_action('widgets_init', 'bebelume_unregister_default_widgets', 11);
+add_action( 'after_setup_theme', 'bebelume_disable_block_widgets' );
 
 /**
  * Inclui arquivo de enqueue
