@@ -10,9 +10,9 @@
 
 .bebelume-sobre-nos-block .sobre-nos-container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 900px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0;
 }
 
 /* Row com background na versão desktop */
@@ -101,7 +101,7 @@
 	.bebelume-sobre-nos-block .content-wrapper {
 		grid-template-columns: 1fr;
 		gap: 30px;
-		padding: 40px 20px;
+		padding: 0;
 		min-height: auto;
 		background-image: none; /* Remove background no mobile */
 	}
