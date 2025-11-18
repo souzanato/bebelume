@@ -300,6 +300,7 @@ body {
 .bebelume-andar.has-image img {
     width: 100%;
     display: block;
+    background-color: transparent;
 }
 
 
