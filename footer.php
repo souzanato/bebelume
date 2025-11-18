@@ -51,5 +51,7 @@
 </footer>
 
 <?php wp_footer(); ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 </body>
 </html>
