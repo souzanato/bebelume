@@ -753,8 +753,8 @@ body {
     z-index: 1;
 }
 
-.tv-image-title {
-    max-width: 200px;
+.tv-image-title img {
+    max-width: 200px !important;
 }
 
 /* Animações das borboletas */
