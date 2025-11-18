@@ -51,42 +51,29 @@ function bebelume_setup() {
 add_action('after_setup_theme', 'bebelume_setup');
 
 /**
- * Registra área de widgets/blocos no footer
+ * Desabilita o editor de blocos em widgets
+ * Fix para WordPress 6.8.3 bug com batch API
+ */
+function bebelume_disable_block_widgets() {
+    remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'bebelume_disable_block_widgets' );
+
+/**
+ * Registra área de widgets no footer (interface clássica)
  */
 function bebelume_register_footer_widgets() {
     register_sidebar( array(
-        'name'          => 'Footer - Área de Blocos',
-        'id'            => 'footer-blocks',
-        'description'   => 'Adicione blocos Gutenberg no footer',
-        'before_widget' => '<div class="footer-block-widget mb-3">',
+        'name'          => 'Footer - Área de Widgets',
+        'id'            => 'footer-widgets',
+        'description'   => 'Adicione widgets no footer',
+        'before_widget' => '<div class="footer-widget mb-3">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4 class="widget-title mb-2">',
         'after_title'   => '</h4>',
     ) );
 }
 add_action( 'widgets_init', 'bebelume_register_footer_widgets' );
-
-/**
- * Fix para batch API aceitar GET em widget-types (WordPress 6.8.3 bug)
- */
-add_filter('rest_pre_dispatch', function($result, $server, $request) {
-    if ($request->get_route() === '/batch/v1') {
-        $requests = $request->get_param('requests');
-        if (is_array($requests)) {
-            foreach ($requests as &$req) {
-                // Se for widget-types com GET, muda para OPTIONS (permitido)
-                if (isset($req['path']) && 
-                    strpos($req['path'], '/wp/v2/widget-types') !== false && 
-                    isset($req['method']) && 
-                    $req['method'] === 'GET') {
-                    $req['method'] = 'OPTIONS';
-                }
-            }
-            $request->set_param('requests', $requests);
-        }
-    }
-    return $result;
-}, 10, 3);
 
 /**
  * Inclui arquivo de enqueue
