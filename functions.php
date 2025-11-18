@@ -67,6 +67,15 @@ function bebelume_register_footer_widgets() {
 add_action( 'widgets_init', 'bebelume_register_footer_widgets' );
 
 /**
+ * Desabilita o editor de blocos em widgets (volta para o clássico)
+ * Fix para erro: "Cannot read properties of null (reading 'endpoints')"
+ */
+function bebelume_disable_block_widgets() {
+    remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'bebelume_disable_block_widgets' );
+
+/**
  * Inclui arquivo de enqueue
  */
 require_once BEBELUME_THEME_DIR . '/inc/enqueue.php';
