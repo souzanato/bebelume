@@ -753,6 +753,10 @@ body {
     z-index: 1;
 }
 
+.tv-image-title {
+    max-width: 200px;
+}
+
 /* Animações das borboletas */
 @keyframes baterAsa {
     from { transform: rotateY(0deg); }
