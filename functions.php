@@ -67,13 +67,26 @@ function bebelume_register_footer_widgets() {
 add_action( 'widgets_init', 'bebelume_register_footer_widgets' );
 
 /**
- * Desabilita o editor de blocos em widgets (volta para o clássico)
- * Fix para erro: "Cannot read properties of null (reading 'endpoints')"
+ * Fix para batch API aceitar GET em widget-types (WordPress 6.8.3 bug)
  */
-function bebelume_disable_block_widgets() {
-    remove_theme_support( 'widgets-block-editor' );
-}
-add_action( 'after_setup_theme', 'bebelume_disable_block_widgets' );
+add_filter('rest_pre_dispatch', function($result, $server, $request) {
+    if ($request->get_route() === '/batch/v1') {
+        $requests = $request->get_param('requests');
+        if (is_array($requests)) {
+            foreach ($requests as &$req) {
+                // Se for widget-types com GET, muda para OPTIONS (permitido)
+                if (isset($req['path']) && 
+                    strpos($req['path'], '/wp/v2/widget-types') !== false && 
+                    isset($req['method']) && 
+                    $req['method'] === 'GET') {
+                    $req['method'] = 'OPTIONS';
+                }
+            }
+            $request->set_param('requests', $requests);
+        }
+    }
+    return $result;
+}, 10, 3);
 
 /**
  * Inclui arquivo de enqueue
