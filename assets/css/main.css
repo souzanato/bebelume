@@ -195,6 +195,33 @@ body {
         background-image: url('../images/terreo-bebelume-azul.png');
 }
 
+/* VERMELHO */
+.bebelume-nivel.vermelho .bebelume-andar.andar-casinha-bebelume {
+    background-image: url('../images/andar-bebelume-vermelho.png');
+}
+
+.bebelume-nivel.vermelho .bebelume-andar.terreo-casinha-bebelume {
+    background-image: url('../images/terreo-bebelume-vermelho.png');
+}
+
+/* SALMAO */
+.bebelume-nivel.salmao .bebelume-andar.andar-casinha-bebelume {
+    background-image: url('../images/andar-bebelume-salmao.png');
+}
+
+.bebelume-nivel.salmao .bebelume-andar.terreo-casinha-bebelume {
+    background-image: url('../images/terreo-bebelume-salmao.png');
+}
+
+/* PRETO */
+.bebelume-nivel.preto .bebelume-andar.andar-casinha-bebelume {
+    background-image: url('../images/andar-bebelume-preto.png');
+}
+
+.bebelume-nivel.preto .bebelume-andar.terreo-casinha-bebelume {
+    background-image: url('../images/terreo-bebelume-preto.png');
+}
+
 /* ============================================
    ANDARES ESPECÍFICOS - CASTELINHO
    ============================================ */
