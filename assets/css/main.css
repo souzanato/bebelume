@@ -757,6 +757,10 @@ body {
     max-width: 200px !important;
 }
 
+.andar-content .wp-block-columns {
+    width: 100%;
+}
+
 /* Animações das borboletas */
 @keyframes baterAsa {
     from { transform: rotateY(0deg); }
