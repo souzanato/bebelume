@@ -130,3 +130,71 @@
 		font-size: 0.9rem;
 	}
 }
+
+/* ==========================================================================
+   MOBILE - ATIVA BLOB MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+	/* Adiciona espaço no topo pro blob aparecer */
+	.bebelume-sobre-nos-block {
+		padding-top: 140px;
+		position: relative;
+	}
+
+	/* Blob mobile */
+	.bebelume-sobre-nos-block::before {
+		content: "";
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		
+		width: 380px;
+		height: 520px; /* aumenta um pouco pra versão vertical */
+		
+		background-image: url('../../../assets/images/blob-mobile.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: top center;
+		
+		opacity: 1;
+		z-index: -1;
+	}
+
+	/* Remove o background do desktop */
+	.bebelume-sobre-nos-block .content-wrapper {
+		background-image: none !important;
+		grid-template-columns: 1fr;
+		padding: 0 20px 40px;
+		gap: 20px;
+	}
+
+	/* Ajuste de título e textos */
+	.bebelume-sobre-nos-block .sobre-nos-title {
+		text-align: center;
+		font-size: 2.4rem;
+		padding-top: 10px;
+	}
+
+	.bebelume-sobre-nos-block .title-section,
+	.bebelume-sobre-nos-block .text-section {
+		padding: 10px !important;
+	}
+
+	.bebelume-sobre-nos-block .text-section p {
+		text-align: center;
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+}
+
+/* MOBILE EXTRA PEQUENO */
+@media (max-width: 480px) {
+	.bebelume-sobre-nos-block::before {
+		width: 300px;
+		height: 420px;
+		top: -30px;
+	}
+}
