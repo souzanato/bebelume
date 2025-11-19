@@ -66,6 +66,38 @@ function bebelume_register_footer_widgets() {
 }
 add_action( 'widgets_init', 'bebelume_register_footer_widgets' );
 
+add_action('wp_footer', function() {
+    // Só injeta o script se NÃO for a página inicial
+    if ( ! is_front_page() ) {
+        ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const block = document.querySelector('.bebelume-sobre-nos-block');
+                if (block) {
+                    block.remove();
+                }
+            });
+        </script>
+        <?php
+    }
+});
+
+add_action('wp_footer', function() {
+    // Só injeta o script se NÃO for a página inicial
+    if ( ! is_front_page() ) {
+        ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const block = document.querySelector('.bebelume-sobre-nos-block');
+                if (block) {
+                    block.remove();
+                }
+            });
+        </script>
+        <?php
+    }
+});
+
 // /**
 //  * Desabilita o editor de blocos em widgets (volta para o clássico)
 //  * Fix para erro: "Cannot read properties of null (reading 'endpoints')"
