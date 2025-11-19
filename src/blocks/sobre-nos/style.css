@@ -11,10 +11,10 @@
 
 /* BLOCO TODO COM O BLOB COMO FUNDO */
 .bebelume-sobre-nos-block .content-wrapper {
-	display: flex;
-	flex-direction: column; /* EMPILHA TUDO */
+	/* display: flex;
+	flex-direction: column; 
 	align-items: center;
-	justify-content: center;
+	justify-content: center; */
 
 	padding: 100px 40px;
 	min-height: 1100px;
@@ -53,7 +53,6 @@
 	align-items: center;
 	padding: 0;
 	color: #6B9B9E;
-	max-width: 30em /* deixa o texto bonito dentro do blob */
 }
 
 .bebelume-sobre-nos-block .text-section p {
