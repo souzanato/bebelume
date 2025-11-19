@@ -53,7 +53,7 @@
 	align-items: center;
 	padding: 0;
 	color: #6B9B9E;
-	max-width: 600px; /* deixa o texto bonito dentro do blob */
+	max-width: 30em /* deixa o texto bonito dentro do blob */
 }
 
 .bebelume-sobre-nos-block .text-section p {
