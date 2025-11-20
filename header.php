@@ -57,9 +57,10 @@
 
       <!-- Botão ENTRAR -->
       <div>
-        <a href="<?php echo esc_url(home_url('/entrar')); ?>" 
-           class="btn btn-light px-4 py-2 rounded-pill fw-bold position-relative">
-          ☀️ ENTRAR
+        <a href="#" 
+           class="btn-disabled btn btn-light px-4 py-2 rounded-pill fw-bold position-relative btn-entrar">
+          ☀️ ENTRAR (Em breve)
+          
         </a>
       </div>
     </div>
