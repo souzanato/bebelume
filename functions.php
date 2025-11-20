@@ -88,7 +88,7 @@ add_action('wp_footer', function() {
         ?>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const block = document.querySelector('.bebelume-sobre-nos-block');
+                const block = document.querySelector('.sobre-nos-wrapper');
                 if (block) {
                     block.remove();
                 }
