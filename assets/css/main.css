@@ -1009,6 +1009,11 @@ body {
     margin-right: auto;
 }
 
+.custom-logo-link img { 
+   height: 3em;
+    width: auto;
+}
+
 @media (min-width: 360px) {
 	
 
