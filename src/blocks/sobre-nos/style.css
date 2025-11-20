@@ -1,124 +1,124 @@
-/**
- * Estilos do bloco Sobre Nós - Front-end (coluna única)
- */
-
-.bebelume-sobre-nos-block {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	position: relative;
+.sobre-nos-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 }
 
-/* BLOCO TODO COM O BLOB COMO FUNDO */
-.bebelume-sobre-nos-block .content-wrapper {
-	/* display: flex;
-	flex-direction: column; 
-	align-items: center;
-	justify-content: center; */
+/* CONTAINER DO BLOB */
+.sobre-nos-blob {
+  width: 100%;
+  max-width: 900px;
 
-	padding: 100px 40px;
-	min-height: 1100px;
+  background-image: url('../../../assets/images/blob-mobile.png');
+  background-repeat: no-repeat;
+  background-position: center top;
 
-	background-image: url('../../../assets/images/blob-mobile.png');
-	background-size: contain;
-	background-position: center top;
-	background-repeat: no-repeat;
+  aspect-ratio: 3 / 4.2;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* conteúdo no topo */
+  padding-top: 13%;
 }
 
-/* TÍTULO */
-.bebelume-sobre-nos-block .title-section {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 3em 0;
-	margin-bottom: 40px;
+/* CONTENT */
+.sobre-nos-content {
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  color: #6b9b9e; /* <<<<<<<<<< NOVA COR DE TEXTO */
 }
 
-.bebelume-sobre-nos-block .sobre-nos-title {
-	font-size: 4rem;
-	font-weight: 300;
-	line-height: 1.1;
-	color: #6B9B9E;
-	margin: 0;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-	text-align: center;
+.sobre-nos-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
 }
 
-/* TEXTO */
-.bebelume-sobre-nos-block .text-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: #6B9B9E;
-	padding: 0 25em;
+.sobre-nos-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-.bebelume-sobre-nos-block .text-section p {
-	font-size: 1.3rem;
-	line-height: 1.8;
-	margin-bottom: 1.5rem;
-	text-align: center;
-}
-
-/* BOTÃO */
-.bebelume-sobre-nos-block .button-wrapper {
-	margin-top: 1.5rem;
-	text-align: center;
-}
-
-.bebelume-sobre-nos-block .sobre-nos-button {
-	display: inline-block;
-	padding: 12px 40px;
-	background: transparent;
-	color: #6B9B9E;
-	text-decoration: none;
-	font-weight: 600;
-	font-size: 0.9rem;
-	letter-spacing: 0.1em;
-	border: 2px solid #6B9B9E;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	text-transform: uppercase;
-}
-
-.bebelume-sobre-nos-block .sobre-nos-button:hover {
-	background: #6B9B9E;
-	color: #ffffff;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-	.bebelume-sobre-nos-block .content-wrapper {
-		padding: 120px 20px 60px;
-		min-height: 900px;
-
-		background-image: url('../../../assets/images/blob-mobile.png');
-		background-size: 90%;
-		background-position: center 20px;
+/* ====================== */
+/* 1) MOBILE PEQUENO      */
+/* ====================== */
+@media (min-width: 360px) {
+	.sobre-nos-blob {
+		background-size: 100% auto;
 	}
 
-	.bebelume-sobre-nos-block .sobre-nos-title {
-		font-size: 2.8rem;
-	}
-
-	.bebelume-sobre-nos-block .text-section p {
+	.sobre-nos-content p {
 		font-size: 1rem;
+		padding: 0 1.2em;
 	}
+
 }
 
-/* MOBILE PEQUENO */
-@media (max-width: 480px) {
-
-	.bebelume-sobre-nos-block .content-wrapper {
-		padding: 140px 15px 60px;
-		background-size: 100%;
-		background-position: center 10px;
+/* ====================== */
+/* 2) MOBILE MÉDIO        */
+/* ====================== */
+@media (min-width: 480px) {
+	.sobre-nos-blob {
+	background-size: 100% auto;
 	}
 
-	.bebelume-sobre-nos-block .sobre-nos-title {
-		font-size: 2.2rem;
+	/* iPhone 8, 11 Pro, Android padrão */
+}
+
+/* ====================== */
+/* 3) MOBILE GRANDE       */
+/* ====================== */
+@media (min-width: 576px) {
+	.sobre-nos-content p {
+		font-size: 1.2rem;
+		padding: 0 2em;
 	}
+	.sobre-nos-blob {
+  background-size: 100% auto;
+}
+
+}
+
+/* ====================== */
+/* 4) TABLET VERTICAL     */
+/* ====================== */
+@media (min-width: 768px) {
+	.sobre-nos-content p {
+		font-size: 1.5rem;
+		padding: 0 3em;
+	}
+	.sobre-nos-blob {
+  background-size: 100% auto;
+}
+
+}
+
+/* ====================== */
+/* 5) TABLET HORIZONTAL   */
+/* ====================== */
+@media (min-width: 992px) {
+    /* iPad horizontal, Galaxy Tab */
+	.sobre-nos-content p {
+		font-size: 1.5rem;
+		padding: 0 3em;
+	}
+	.sobre-nos-blob {
+  background-size: 75% auto;
+}
+
+}
+
+/* ====================== */
+/* 6) DESKTOP MÉDIO       */
+/* ====================== */
+@media (min-width: 1200px) {
+    /* Laptops 13–15” */
+}
+
+/* ====================== */
+/* 7) DESKTOP GRANDE      */
+/* ====================== */
+@media (min-width: 1400px) {
+    /* Monitores 1080p */
 }
