@@ -1004,6 +1004,11 @@ body {
     display: none;
 }
 
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 360px) {
 	
 
