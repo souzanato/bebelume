@@ -1014,6 +1014,14 @@ body {
     width: auto;
 }
 
+.text-content {
+    padding: 1em;
+}
+
+.text-content p {
+    line-height: 1em;
+}
+
 @media (min-width: 360px) {
 	
 
