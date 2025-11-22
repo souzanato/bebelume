@@ -42,11 +42,22 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- Adicione este código no header.php do seu tema, logo após a tag <body> -->
 
+<!-- Spinner de Loading - Adicione logo após a tag <body> -->
 <div id="page-spinner" class="spinner-backdrop">
     <div class="spinner-container">
-        <!-- Substitua o src pela URL da sua imagem PNG -->
+        <!-- SVG do círculo de progresso -->
+        <div class="spinner-progress">
+            <svg viewBox="0 0 160 160">
+                <circle 
+                    class="spinner-progress-circle" 
+                    cx="80" 
+                    cy="80" 
+                    r="75"
+                />
+            </svg>
+        </div>
+        <!-- Sua imagem PNG -->
         <img src="/wp-content/uploads/2025/11/favico.png" alt="Carregando..." class="spinner-image">
     </div>
 </div>
