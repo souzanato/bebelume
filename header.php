@@ -42,6 +42,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <!-- Adicione este código no header.php do seu tema, logo após a tag <body> -->
+
+<div id="page-spinner" class="spinner-backdrop">
+    <div class="spinner-container">
+        <!-- Substitua o src pela URL da sua imagem PNG -->
+        <img src="/wp-content/uploads/2025/11/favico.png" alt="Carregando..." class="spinner-image">
+    </div>
+</div>
+
 <?php wp_body_open(); ?>
 
 <header class="site-header header-infantil py-3 position-relative overflow-hidden">

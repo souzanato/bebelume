@@ -9,11 +9,41 @@
     'use strict';
 
     /**
+     * Gerenciamento do Spinner de Loading
+     */
+    function initSpinner() {
+        // Função para esconder o spinner
+        function hideSpinner() {
+            var spinner = document.getElementById('page-spinner');
+            if (spinner) {
+                spinner.classList.add('hidden');
+                
+                // Remove o elemento do DOM após a transição
+                setTimeout(function() {
+                    spinner.remove();
+                }, 500);
+            }
+        }
+        
+        // Aguarda o carregamento completo do DOM e todos os recursos
+        if (document.readyState === 'complete') {
+            // Se já estiver carregado, esconde imediatamente
+            hideSpinner();
+        } else {
+            // Aguarda o evento de load (DOM + imagens + CSS + scripts)
+            window.addEventListener('load', hideSpinner);
+        }
+    }
+
+    /**
      * Quando o documento estiver pronto
      */
     $(document).ready(function() {
         
-        // Inicializa funcionalidades
+        // Inicializa o spinner
+        initSpinner();
+        
+        // Inicializa outras funcionalidades
         bebelumeInit();
         
     });
