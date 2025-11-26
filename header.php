@@ -47,7 +47,7 @@
 <div id="page-spinner" class="spinner-backdrop">
     <div class="spinner-container">
         <!-- Sua imagem PNG -->
-        <img src="/wp-content/uploads/2025/11/favico.png" alt="Carregando..." class="spinner-image">
+        <img src="/wp-content/uploads/2025/11/favico-1.png" alt="Carregando..." class="spinner-image">
         <!-- Texto de carregamento -->
         <div class="spinner-text">Carregando...</div>
     </div>
