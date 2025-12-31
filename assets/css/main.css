@@ -113,6 +113,7 @@ body {
 .site-header {
     background-color: var(--color-bebelume-pink);
     padding: 1rem 0;
+    z-index: 9998 !important;
 }
 
 
@@ -960,6 +961,306 @@ body {
     color: #333;
 }
 
+/**
+ * Header User Dropdown - Estilo Bebelume
+ */
+
+/* ========================================
+   VARIÁVEIS
+   ======================================== */
+:root {
+    --bbl-pink: #E73665;
+    --bbl-cyan: #00BCD4;
+    --bbl-white: #FFFFFF;
+    --bbl-bg-light: #F5F9FC;
+    --bbl-border: #E0E7ED;
+    --bbl-text-primary: #2C3E50;
+    --bbl-text-secondary: #5A6C7D;
+}
+
+/* ========================================
+   CONTAINER DO DROPDOWN
+   ======================================== */
+.header-user-area {
+    position: relative;
+    z-index: 9999;
+}
+
+.bbl-user-dropdown {
+    position: relative;
+    z-index: 9999; /* ADICIONADO */
+}
+
+/* ========================================
+   BOTÃO TOGGLE
+   ======================================== */
+   header.site-header,
+.header-infantil {
+    z-index: 9998 !important;
+    position: relative !important;
+}
+
+.bbl-user-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 2px solid var(--bbl-border);
+    border-radius: 50px;
+    padding: 6px 16px 6px 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: var(--bbl-text-primary);
+    font-size: 15px;
+    position: relative; /* ADICIONADO */
+    z-index: 10000; /* ADICIONADO */
+}
+
+.bbl-user-toggle:hover {
+    border-color: var(--bbl-cyan);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.15);
+}
+
+.bbl-user-toggle[aria-expanded="true"] {
+    border-color: var(--bbl-cyan);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
+}
+
+.bbl-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--bbl-cyan);
+    object-fit: cover;
+}
+
+.bbl-user-name {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bbl-dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.bbl-user-toggle[aria-expanded="true"] .bbl-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   MENU DROPDOWN
+   ======================================== */
+.bbl-user-menu {
+    position: fixed; /* MUDOU DE ABSOLUTE PARA FIXED */
+    top: 0; /* Será calculado pelo JavaScript */
+    right: 0; /* Será calculado pelo JavaScript */
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+    min-width: 280px;
+    overflow: visible;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999999; /* MUITO ALTO */
+}
+
+.bbl-user-menu[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ========================================
+   HEADER DO MENU
+   ======================================== */
+.bbl-user-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background: var(--bbl-bg-light);
+    border-bottom: 2px solid var(--bbl-border);
+}
+
+.bbl-user-menu-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid var(--bbl-cyan);
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
+}
+
+.bbl-user-menu-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bbl-user-menu-info strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bbl-text-primary);
+}
+
+.bbl-user-menu-info span {
+    font-size: 13px;
+    color: var(--bbl-text-secondary);
+}
+
+/* ========================================
+   ITENS DO MENU
+   ======================================== */
+.bbl-user-menu-items {
+    padding: 12px;
+}
+
+.bbl-user-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: var(--bbl-text-primary);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.bbl-user-menu-item:hover {
+    background: var(--bbl-bg-light);
+    color: var(--bbl-cyan);
+}
+
+.bbl-user-menu-item svg {
+    flex-shrink: 0;
+    color: var(--bbl-text-secondary);
+    transition: color 0.3s ease;
+}
+
+.bbl-user-menu-item:hover svg {
+    color: var(--bbl-cyan);
+}
+
+/* Botão Sair */
+.bbl-user-menu-logout {
+    margin-top: 8px;
+    background: linear-gradient(135deg, var(--bbl-pink) 0%, #d32f5a 100%);
+    color: white !important;
+    font-weight: 700;
+}
+
+.bbl-user-menu-logout:hover {
+    background: linear-gradient(135deg, #d32f5a 0%, #b82847 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 54, 101, 0.3);
+}
+
+.bbl-user-menu-logout svg {
+    color: white !important;
+}
+/* ============================================
+   STICKY FOOTER - Footer sempre no final
+   ============================================ */
+
+/* HTML e BODY */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    /* Manter o background azul */
+    background-color: var(--color-sky);
+}
+
+/* Wrapper principal */
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Admin bar - não cresce */
+#wpadminbar {
+    flex-shrink: 0;
+}
+
+/* Header - não cresce */
+.site-header {
+    flex-shrink: 0;
+}
+
+/* MAIN - CRESCE PARA EMPURRAR FOOTER */
+#main-content,
+.site-main {
+    flex: 1 0 auto; /* Cresce para empurrar o footer */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* PMPro wrapper */
+.pmpro {
+    /* NÃO precisa crescer, só o main */
+}
+
+/* Footer - GRUDA NO FINAL */
+.site-footer {
+    flex-shrink: 0;
+    margin-top: 0 !important;
+}
+
+/* Ajuste para admin bar */
+body.admin-bar {
+    min-height: 100vh;
+}
+
+body.admin-bar #page {
+    min-height: calc(100vh - 32px);
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar {
+        min-height: calc(100vh - 46px);
+    }
+    
+    body.admin-bar #page {
+        min-height: calc(100vh - 46px);
+    }
+}
+
+/* Jardim na home */
+body.home .garden-container {
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.bbl-pmpro-levels {
+  line-height: 1em;
+}
+
+.bbl-pmpro-levels .bebelume-nivel .andar-casinha-bebelume, .bbl-pmpro-levels .bebelume-nivel .terreo-casinha-bebelume {
+    background-color: #fff !important;
+    background-image: none !important;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
 
 /* ============================================
    MEDIA QUERIES - RESPONSIVIDADE
@@ -989,6 +1290,29 @@ body {
         width: 60px;
         height: 120px;
     }
+
+    .bbl-user-menu {
+        min-width: 260px;
+        right: -10px;
+    }
+    
+    .bbl-user-menu-header {
+        padding: 20px;
+    }
+    
+    .bbl-user-menu-avatar {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .bbl-user-menu-info strong {
+        font-size: 15px;
+    }
+    
+    .bbl-user-menu-item {
+        font-size: 14px;
+        padding: 12px 14px;
+    }    
 }
 
 /* ====================== */

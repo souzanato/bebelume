@@ -124,4 +124,66 @@
         $('body').addClass('touch-device');
     }
 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('userMenuToggle');
+        const menu = document.getElementById('userMenu');
+        
+        if (!toggle || !menu) return;
+        
+        // Toggle dropdown
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        // Fechar ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                closeMenu();
+            }
+        });
+        
+        // Fechar com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+        
+        // Recalcular posição ao scroll/resize
+        window.addEventListener('scroll', updateMenuPosition);
+        window.addEventListener('resize', updateMenuPosition);
+        
+        function openMenu() {
+            updateMenuPosition();
+            toggle.setAttribute('aria-expanded', 'true');
+            menu.setAttribute('aria-hidden', 'false');
+        }
+        
+        function closeMenu() {
+            toggle.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
+        }
+        
+        function updateMenuPosition() {
+            // Pegar posição do botão
+            const rect = toggle.getBoundingClientRect();
+            
+            // Calcular posição do menu
+            const top = rect.bottom + 12; // 12px de espaço
+            const right = window.innerWidth - rect.right;
+            
+            // Aplicar posição
+            menu.style.top = top + 'px';
+            menu.style.right = right + 'px';
+        }
+    });
+
 })(jQuery);
