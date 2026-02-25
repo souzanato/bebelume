@@ -19,6 +19,7 @@ function bebelume_register_blocks() {
        'sobre-nos',
        'telhado-casinha-bebelume',
        'telhado-castelinho-bebelume',
+       'telhado-passarinhos-bebelume',
        'andar-castelinho-bebelume',
        'andar-casinha-bebelume',
        'terreo-casinha-bebelume',

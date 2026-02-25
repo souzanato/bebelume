@@ -299,6 +299,18 @@ body {
 }
 
 /* ============================================
+   TELHADO PASSARINHOS BEBELUME
+   ============================================ */
+
+.bebelume-andar.telhado-passarinhos-bebelume {
+    background-image: url('../images/andar-passarinhos.png');
+}
+
+.bebelume-andar.telhado-passarinhos-bebelume::before {
+    padding-top: 40%;
+}
+
+/* ============================================
    ANDARES ESPECÍFICOS - CASTELINHO
    ============================================ */
 
