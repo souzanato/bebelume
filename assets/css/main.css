@@ -132,7 +132,7 @@ body {
 /* Nível do telhado com degradê de céu */
 .bebelume-nivel:first-child {
     /* background: linear-gradient(to bottom, var(--color-sky) 0%, var(--color-white) 100%); */
-    overflow: hidden;
+    overflow: visible;
 }
 
 .bebelume-nivel.branco .bebelume-andar.andar-casinha-bebelume {
@@ -302,12 +302,63 @@ body {
    TELHADO PASSARINHOS BEBELUME
    ============================================ */
 
+/* ============================================
+   TELHADO PASSARINHOS BEBELUME
+   ============================================ */
+.bebelume-andar.telhado-passarinhos-bebelume .andar-content {
+    background-color: #fff;
+    border: 3px solid #000;
+    margin-top: 2em;
+    min-height: 25em;
+}
+
 .bebelume-andar.telhado-passarinhos-bebelume {
-    background-image: url('../images/andar-passarinhos.png');
+    max-width: var(--max-width-casa);
+    width: 100%;
 }
 
 .bebelume-andar.telhado-passarinhos-bebelume::before {
-    padding-top: 40%;
+    content: none;
+}
+
+.bebelume-andar.telhado-passarinhos-bebelume .andar-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+/* Passarinho amarelo (esquerda) */
+.bebelume-andar.telhado-passarinhos-bebelume .andar-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: clamp(10px, 3%, 40px);
+    width: clamp(50px, 7vw, 100px);
+    height: clamp(50px, 7vw, 100px);
+    background: url('../images/passarinho-amarelo.png') no-repeat bottom center;
+    background-size: contain;
+    transform: translateY(-60%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Passarinho roxo (direita) */
+.bebelume-andar.telhado-passarinhos-bebelume .andar-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: clamp(10px, 3%, 40px);
+    width: clamp(50px, 7vw, 100px);
+    height: clamp(50px, 7vw, 100px);
+    background: url('../images/passarinho-roxo.png') no-repeat bottom center;
+    background-size: contain;
+    transform: translateY(-60%);
+    pointer-events: none;
+    z-index: 10;
 }
 
 /* ============================================
@@ -1196,7 +1247,7 @@ body {
 
 /* HTML e BODY */
 html {
-    height: 100%;
+    height: auto; /* NÃO trava a altura */
 }
 
 body {
@@ -1205,15 +1256,16 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    /* Manter o background azul */
     background-color: var(--color-sky);
+    overflow-x: hidden;
+    /* REMOVE o overflow-y: scroll que foi adicionado */
 }
 
 /* Wrapper principal */
 #page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    flex: 1;           /* era min-height: 100vh — segundo vilão */
     width: 100%;
 }
 
@@ -1230,9 +1282,10 @@ body {
 /* MAIN - CRESCE PARA EMPURRAR FOOTER */
 #main-content,
 .site-main {
-    flex: 1 0 auto; /* Cresce para empurrar o footer */
+    flex: 1 0 auto;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: clip;
 }
 
 /* PMPro wrapper */
@@ -1243,7 +1296,6 @@ body {
 /* Footer - GRUDA NO FINAL */
 .site-footer {
     flex-shrink: 0;
-    margin-top: 0 !important;
 }
 
 /* Ajuste para admin bar */
