@@ -1011,7 +1011,9 @@ body {
 }
 
 .btn-entrar {
-    display: none;
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 6px 14px !important;
 }
 
 .mx-auto {
